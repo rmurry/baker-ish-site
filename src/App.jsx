@@ -144,7 +144,7 @@ function App() {
             <div className="contact-stack">
               <a href="mailto:inquiry@baker-ish.com"><Mail size={18}/> inquiry@baker-ish.com</a>
               <span><MapPin size={18}/> Omaha-area pickup</span>
-              <a href="#" aria-label="Instagram"><Instagram size={18}/> @baker.ish.omaha</a>
+              <a href="https://instagram.com/baker.ish.omaha" target="_blank" rel="noreferrer" aria-label="Instagram"> @baker.ish.omah </a>
             </div>
           </div>
           <form className="order-form" action="mailto:sales@baker-ish.com" method="post" encType="text/plain">
