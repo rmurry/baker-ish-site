@@ -28,6 +28,37 @@ function App() {
 
   const scrollToOrder = () => document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })
 
+  const [formStatus, setFormStatus] = useState('idle')
+
+const handleSubmit = async (event) => {
+  event.preventDefault()
+
+  setFormStatus('sending')
+
+  const form = event.target
+  const formData = new FormData(form)
+
+  try {
+    const response = await fetch('https://formspree.io/f/xaeywqwd', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+
+    if (response.ok) {
+      setFormStatus('success')
+      form.reset()
+    } else {
+      setFormStatus('error')
+    }
+  } catch (error) {
+    console.error(error)
+    setFormStatus('error')
+  }
+}
+
   return (
     <div className="site-shell">
       <header className="site-header">
@@ -147,36 +178,83 @@ function App() {
               <a href="https://instagram.com/baker.ish.omaha" target="_blank" rel="noreferrer" aria-label="Instagram"> @baker.ish.omaha </a>
             </div>
           </div>
-          <form className="order-form" action="https://formspree.io/f/xaeywqwd" method="post">
-            <label>Name<input name="name" type="text" placeholder="Your name" required /></label>
-            <label>Email<input name="email" type="email" placeholder="you@example.com" required /></label>
-            <div className="form-row">
-              <label>Event date<input name="event-date" type="date" /></label>
-              <label>Quantity<select name="quantity" defaultValue="">
-                <option value="" disabled>Select</option>
-                <option>12</option><option>24</option><option>36</option><option>48+</option>
-              </select></label>
-            </div>
-            <label>What are you thinking?<textarea name="details" rows="5" placeholder="Theme, colors, flavors, inspiration, occasion..." /></label>
-            <button className="form-submit" type="submit" disabled={formStatus === 'sending'}>
-              {formStatus === 'sending'
-                ? 'Sending...'
-                : 'Send order request'
-              }
-              {formStatus !== 'sending' && <ArrowRight size={18}/>}</button>
+<form className="order-form" onSubmit={handleSubmit}>
+  <label>
+    Name
+    <input
+      name="name"
+      type="text"
+      placeholder="Your name"
+      required
+    />
+  </label>
 
-              {formStatus === 'success' && (
-                <p className="form-success">
-                Thanks! Your order request has been sent. We'll be in touch soon.
-                </p>
-              )}
+  <label>
+    Email
+    <input
+      name="email"
+      type="email"
+      placeholder="you@example.com"
+      required
+    />
+  </label>
 
-              {formStatus === 'error' && (
-                <p className="form-error">
-                Something went wrong. Please try again or email us directly.
-                </p>
-              )}
-          </form>
+  <div className="form-row">
+    <label>
+      Event date
+      <input
+        name="event-date"
+        type="date"
+      />
+    </label>
+
+    <label>
+      Quantity
+      <select name="quantity" defaultValue="">
+        <option value="" disabled>
+          Select
+        </option>
+        <option value="12">12</option>
+        <option value="24">24</option>
+        <option value="36">36</option>
+        <option value="48+">48+</option>
+      </select>
+    </label>
+  </div>
+
+  <label>
+    What are you thinking?
+    <textarea
+      name="details"
+      rows="5"
+      placeholder="Theme, colors, flavors, inspiration, occasion..."
+    />
+  </label>
+
+  <button
+    className="form-submit"
+    type="submit"
+    disabled={formStatus === 'sending'}
+  >
+    {formStatus === 'sending'
+      ? 'Sending...'
+      : 'Send order request'}
+
+    {formStatus !== 'sending' && <ArrowRight size={18} />}
+  </button>
+
+  {formStatus === 'success' && (
+    <p className="form-success">
+      Thanks! Your order request has been sent. We'll be in touch soon.
+    </p>
+  )}
+
+  {formStatus === 'error' && (
+    <p className="form-error">
+      Something went wrong. Please try again or email us directly.
+    </p>
+  )}
+</form>
         </section>
 
         <section className="faq section-pad" id="faq">
