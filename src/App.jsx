@@ -147,7 +147,7 @@ function App() {
               <a href="https://instagram.com/baker.ish.omaha" target="_blank" rel="noreferrer" aria-label="Instagram"> @baker.ish.omaha </a>
             </div>
           </div>
-          <form className="order-form" action="mailto:sales@baker-ish.com" method="post" encType="text/plain">
+          <form className="order-form" action="https://formspree.io/f/xaeywqwd" method="post">
             <label>Name<input name="name" type="text" placeholder="Your name" required /></label>
             <label>Email<input name="email" type="email" placeholder="you@example.com" required /></label>
             <div className="form-row">
