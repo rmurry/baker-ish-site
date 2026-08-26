@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, CakeSlice, CalendarDays, ChevronDown, Instagram, Mail, MapPin, Menu, Sparkles, X } from 'lucide-react'
+import { ArrowRight, CakeSlice, CalendarDays, ChevronDown, Mail, MapPin, Menu, Sparkles, X } from 'lucide-react'
 import logo from './assets/baker-ish-logo.jpeg'
 
 const flavors = [
@@ -142,12 +142,12 @@ function App() {
             <h2>Let’s make something<br/><em>really good.</em></h2>
             <p>Tell us what you’re celebrating, how many cake pops you need, and the look you have in mind.</p>
             <div className="contact-stack">
-              <a href="mailto:hello@baker-ish.com"><Mail size={18}/> hello@baker-ish.com</a>
+              <a href="mailto:inquiry@baker-ish.com"><Mail size={18}/> inquiry@baker-ish.com</a>
               <span><MapPin size={18}/> Omaha-area pickup</span>
-              <a href="#" aria-label="Instagram"><Instagram size={18}/> @bakerish</a>
+              <a href="#" aria-label="Instagram"><Instagram size={18}/> @baker.ish.omaha</a>
             </div>
           </div>
-          <form className="order-form" action="mailto:hello@baker-ish.com" method="post" encType="text/plain">
+          <form className="order-form" action="mailto:sales@baker-ish.com" method="post" encType="text/plain">
             <label>Name<input name="name" type="text" placeholder="Your name" required /></label>
             <label>Email<input name="email" type="email" placeholder="you@example.com" required /></label>
             <div className="form-row">
@@ -185,7 +185,7 @@ function App() {
           <p>Not a bakery, just really good cake pops.</p>
         </div>
         <div className="footer-links">
-          <a href="mailto:hello@baker-ish.com">Email</a>
+          <a href="mailto:inquiry@baker-ish.com">Email</a>
           <a href="#order">Order</a>
           <a href="#faq">FAQ</a>
         </div>
