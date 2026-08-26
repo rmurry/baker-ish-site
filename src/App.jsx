@@ -144,7 +144,7 @@ function App() {
             <div className="contact-stack">
               <a href="mailto:inquiry@baker-ish.com"><Mail size={18}/> inquiry@baker-ish.com</a>
               <span><MapPin size={18}/> Omaha-area pickup</span>
-              <a href="https://instagram.com/baker.ish.omaha" target="_blank" rel="noreferrer" aria-label="Instagram"> @baker.ish.omah </a>
+              <a href="https://instagram.com/baker.ish.omaha" target="_blank" rel="noreferrer" aria-label="Instagram"> @baker.ish.omaha </a>
             </div>
           </div>
           <form className="order-form" action="mailto:sales@baker-ish.com" method="post" encType="text/plain">
@@ -159,7 +159,6 @@ function App() {
             </div>
             <label>What are you thinking?<textarea name="details" rows="5" placeholder="Theme, colors, flavors, inspiration, occasion..." /></label>
             <button className="form-submit" type="submit">Send order request <ArrowRight size={18}/></button>
-            <small>This opens your email app. Swap this form for Formspree, Shopify, or another backend whenever you're ready.</small>
           </form>
         </section>
 
