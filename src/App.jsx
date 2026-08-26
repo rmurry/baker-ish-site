@@ -158,7 +158,24 @@ function App() {
               </select></label>
             </div>
             <label>What are you thinking?<textarea name="details" rows="5" placeholder="Theme, colors, flavors, inspiration, occasion..." /></label>
-            <button className="form-submit" type="submit">Send order request <ArrowRight size={18}/></button>
+            <button className="form-submit" type="submit" disabled={formStatus === 'sending'}>
+              {formStatus === 'sending'
+                ? 'Sending...'
+                : 'Send order request'
+              }
+              {formStatus !== 'sending' && <ArrowRight size={18}/>}</button>
+
+              {formStatus === 'success' && (
+                <p className="form-success">
+                Thanks! Your order request has been sent. We'll be in touch soon.
+                </p>
+              )}
+
+              {formStatus === 'error' && (
+                <p className="form-error">
+                Something went wrong. Please try again or email us directly.
+                </p>
+              )}
           </form>
         </section>
 
