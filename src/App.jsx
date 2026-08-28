@@ -37,14 +37,72 @@ const handleSubmit = async (e) => {
   const form = e.currentTarget;
   const formData = new FormData(form);
 
+  // Get selected inspiration files
+  const files = formData
+    .getAll('inspiration-files')
+    .filter((file) => file && file.size > 0);
+
+  // Optional safety limit
+  if (files.length > 5) {
+    alert('Please upload no more than 5 inspiration files.');
+    setFormStatus(null);
+    return;
+  }
+
   try {
-    const response = await fetch('https://formspree.io/f/xaeywqwd', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
+    const uploadedUrls = [];
+
+    // Upload each file to Cloudinary
+    for (const file of files) {
+      const uploadData = new FormData();
+
+      uploadData.append('file', file);
+      uploadData.append('upload_preset', 'bakerish_orders');
+
+      const uploadResponse = await fetch(
+        'https://api.cloudinary.com/v1_1/r4r0nv6g/auto/upload',
+        {
+          method: 'POST',
+          body: uploadData,
+        }
+      );
+
+      const uploadResult = await uploadResponse.json();
+
+      if (!uploadResponse.ok) {
+        console.error('Cloudinary upload error:', uploadResult);
+        throw new Error(
+          uploadResult?.error?.message || 'File upload failed'
+        );
+      }
+
+      uploadedUrls.push(uploadResult.secure_url);
+    }
+
+    // IMPORTANT:
+    // Remove the files themselves before sending to Formspree.
+    // Formspree free does not permit file attachments.
+    formData.delete('inspiration-files');
+
+    // Send Cloudinary URLs to Formspree as normal text
+    if (uploadedUrls.length > 0) {
+      formData.append(
+        'inspiration-file-links',
+        uploadedUrls.join('\n')
+      );
+    }
+
+    // Submit order information to Formspree
+    const response = await fetch(
+      'https://formspree.io/f/xaeywqwd',
+      {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      }
+    );
 
     const result = await response.json();
 
@@ -53,14 +111,6 @@ const handleSubmit = async (e) => {
       form.reset();
     } else {
       console.error('Formspree error:', result);
-
-      if (result.errors) {
-        console.error(
-          'Formspree messages:',
-          result.errors.map((error) => error.message)
-        );
-      }
-
       setFormStatus('error');
     }
   } catch (error) {
@@ -245,15 +295,20 @@ const handleSubmit = async (e) => {
     />
   </label>
 
-  <label>
-    Inspiration image
-    <input
-      name="inspiration-files"
-      type="file"
-      accept="image/png, image/jpeg, image/webp, application/pdf"
-      multiple
-    />
-  </label>
+<label>
+  Inspiration files (optional)
+
+  <input
+    name="inspiration-files"
+    type="file"
+    accept="image/png, image/jpeg, image/webp, application/pdf"
+    multiple
+  />
+
+  <span className="form-hint">
+    Upload up to 5 photos, invitations, designs, or PDFs for inspiration.
+  </span>
+</label>
 
   <button
     className="form-submit"
