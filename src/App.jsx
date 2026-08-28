@@ -154,7 +154,6 @@ const handleSubmit = async (e) => {
             <p className="hero-lede">Small-batch cake pops made for birthdays, showers, holidays, celebrations—or whenever you need something a little sweeter.</p>
             <div className="hero-actions">
               <button className="primary-btn" onClick={scrollToOrder}>Start an order <ArrowRight size={18}/></button>
-              <a className="text-link" href="#flavors">See flavors</a>
             </div>
             <div className="hero-meta">
               <span><MapPin size={16}/> Omaha, Nebraska</span>
