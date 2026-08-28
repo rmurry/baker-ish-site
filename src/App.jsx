@@ -30,13 +30,11 @@ function App() {
 
   const [formStatus, setFormStatus] = useState('idle')
 
-const handleSubmit = async (event) => {
-  event.preventDefault()
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setFormStatus('sending');
 
-  setFormStatus('sending')
-
-  const form = event.target
-  const formData = new FormData(form)
+  const formData = new FormData(e.currentTarget);
 
   try {
     const response = await fetch('https://formspree.io/f/xaeywqwd', {
@@ -45,19 +43,18 @@ const handleSubmit = async (event) => {
       headers: {
         Accept: 'application/json',
       },
-    })
+    });
 
     if (response.ok) {
-      setFormStatus('success')
-      form.reset()
+      setFormStatus('success');
+      e.currentTarget.reset();
     } else {
-      setFormStatus('error')
+      setFormStatus('error');
     }
   } catch (error) {
-    console.error(error)
-    setFormStatus('error')
+    setFormStatus('error');
   }
-}
+};
 
   return (
     <div className="site-shell">
@@ -178,7 +175,11 @@ const handleSubmit = async (event) => {
               <a href="https://instagram.com/baker.ish.omaha" target="_blank" rel="noreferrer" aria-label="Instagram"> @baker.ish.omaha </a>
             </div>
           </div>
-<form className="order-form" onSubmit={handleSubmit}>
+<form
+  className="order-form"
+  onSubmit={handleSubmit}
+  encType="multipart/form-data"
+>
   <label>
     Name
     <input
@@ -228,6 +229,15 @@ const handleSubmit = async (event) => {
       name="details"
       rows="5"
       placeholder="Theme, colors, flavors, inspiration, occasion..."
+    />
+  </label>
+
+  <label>
+    Inspiration image
+    <input
+      name="inspiration-image"
+      type="file"
+      accept="image/png, image/jpeg, image/webp"
     />
   </label>
 
