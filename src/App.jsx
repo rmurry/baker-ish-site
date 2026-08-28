@@ -182,19 +182,6 @@ const handleSubmit = async (e) => {
             <h2>Start with a flavor.<br/>Make it yours.</h2>
             <p>Pick a classic base, then customize colors, sprinkles, and details to fit your event.</p>
           </div>
-          <div className="flavor-grid">
-            {flavors.map((flavor, i) => (
-              <article className="flavor-card" key={flavor.name}>
-                <span className="card-number">0{i+1}</span>
-                <div className="cake-pop-illustration"><span/></div>
-                <div>
-                  <span className="pill">{flavor.accent}</span>
-                  <h3>{flavor.name}</h3>
-                  <p>{flavor.note}</p>
-                </div>
-              </article>
-            ))}
-          </div>
         </section>
 
         <section className="occasions section-pad" id="occasions">
