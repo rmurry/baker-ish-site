@@ -287,7 +287,7 @@ const handleSubmit = async (e) => {
   </div>
 
   <label>
-    What are you thinking? Give as much detail as you would like (colors, sprinkles, marble design, etc.) - otherwise you can leave the creativity up to me!
+    What are you thinking? Give as much detail as you would like - otherwise you can leave the creativity up to me!
     <textarea
       name="details"
       rows="5"
