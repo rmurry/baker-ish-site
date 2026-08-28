@@ -306,7 +306,7 @@ const handleSubmit = async (e) => {
   />
 
   <span className="form-hint">
-    Upload up to 5 photos, invitations, designs, or PDFs for inspiration.
+    Upload up to 5 photos.
   </span>
 </label>
 
