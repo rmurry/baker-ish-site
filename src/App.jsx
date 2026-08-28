@@ -175,15 +175,6 @@ const handleSubmit = async (e) => {
         <section className="marquee" aria-label="Baker-ish specialties">
           <div>CAKE POPS ✦ CUSTOM COLORS ✦ OMAHA PICKUP ✦ SMALL BATCH ✦ REALLY GOOD CAKE POPS ✦</div>
         </section>
-
-        <section className="section-pad intro-grid" id="flavors">
-          <div className="section-heading">
-            <span className="kicker">The classics</span>
-            <h2>Start with a flavor.<br/>Make it yours.</h2>
-            <p>Pick a classic base, then customize colors, sprinkles, and details to fit your event.</p>
-          </div>
-        </section>
-
         <section className="occasions section-pad" id="occasions">
           <div className="section-heading centered">
             <span className="kicker">Made for moments</span>
