@@ -34,7 +34,8 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   setFormStatus('sending');
 
-  const formData = new FormData(e.currentTarget);
+  const form = e.currentTarget;
+  const formData = new FormData(form);
 
   try {
     const response = await fetch('https://formspree.io/f/xaeywqwd', {
@@ -45,15 +46,25 @@ const handleSubmit = async (e) => {
       },
     });
 
+    const result = await response.json();
+
     if (response.ok) {
       setFormStatus('success');
-      e.currentTarget.reset();
+      form.reset();
     } else {
-      console.error('Formspree error:',data)
+      console.error('Formspree error:', result);
+
+      if (result.errors) {
+        console.error(
+          'Formspree messages:',
+          result.errors.map((error) => error.message)
+        );
+      }
+
       setFormStatus('error');
     }
   } catch (error) {
-    console.error('Submission error:',error)
+    console.error('Submission error:', error);
     setFormStatus('error');
   }
 };
@@ -237,7 +248,7 @@ const handleSubmit = async (e) => {
   <label>
     Inspiration image
     <input
-      name="inspiration-image"
+      name="inspiration-files"
       type="file"
       accept="image/png, image/jpeg, image/webp, application/pdf"
       multiple
