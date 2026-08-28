@@ -167,3 +167,40 @@ footer { max-width:1240px; margin:0 auto; padding:50px 28px 70px; display:grid; 
   footer { grid-template-columns:1fr; }
   .legal { grid-column:auto; }
 }
+
+.flavor-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.flavor-fieldset legend {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.flavor-fieldset .form-hint {
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.flavor-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flavor-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.flavor-option input {
+  width: auto;
+  margin: 0;
+}

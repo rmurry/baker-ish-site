@@ -295,6 +295,45 @@ const handleSubmit = async (e) => {
     />
   </label>
 
+  <fieldset className="flavor-fieldset">
+  <legend>
+    Flavors <span className="form-hint">Pick one or two</span>
+  </legend>
+
+  <div className="flavor-options">
+    {[
+      'Funfetti',
+      'Orange Creamsicle',
+      'Vanilla',
+      'Lemon',
+      'Strawberry',
+      'Chocolate',
+    ].map((flavor) => (
+      <label key={flavor} className="flavor-option">
+        <input
+          type="checkbox"
+          name="flavors"
+          value={flavor}
+          onChange={(e) => {
+            const form = e.currentTarget.form;
+
+            if (!form) return;
+
+            const checked = form.querySelectorAll(
+              'input[name="flavors"]:checked'
+            );
+
+            if (checked.length > 2) {
+              e.currentTarget.checked = false;
+            }
+          }}
+        />
+        <span>{flavor}</span>
+      </label>
+    ))}
+  </div>
+</fieldset>
+
 <label>
   Inspiration files (optional)
 
