@@ -49,9 +49,11 @@ const handleSubmit = async (e) => {
       setFormStatus('success');
       e.currentTarget.reset();
     } else {
+      console.error('Formspree error:',data)
       setFormStatus('error');
     }
   } catch (error) {
+    console.error('Submission error:',error)
     setFormStatus('error');
   }
 };
