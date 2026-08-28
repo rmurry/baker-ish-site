@@ -171,7 +171,7 @@ const handleSubmit = async (event) => {
           <div className="order-copy">
             <span className="kicker light">Custom orders</span>
             <h2>Let’s make something<br/><em>really good.</em></h2>
-            <p>Tell us what you’re celebrating, how many cake pops you need, and the look you have in mind.</p>
+            <p>Tell us what you’re celebrating, how many cake pops you need, and the look you have in mind. Starting at $30/dozen for standard designs or $36/dozen for customization.</p>
             <div className="contact-stack">
               <a href="mailto:inquiry@baker-ish.com"><Mail size={18}/> inquiry@baker-ish.com</a>
               <span><MapPin size={18}/> Omaha-area pickup</span>
