@@ -237,7 +237,8 @@ const handleSubmit = async (e) => {
     <input
       name="inspiration-image"
       type="file"
-      accept="image/png, image/jpeg, image/webp"
+      accept="image/png, image/jpeg, image/webp, application/pdf"
+      multiple
     />
   </label>
 
