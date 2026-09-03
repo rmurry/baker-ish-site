@@ -366,6 +366,16 @@ const handleSubmit = async (e) => {
             ))}
           </div>
         </section>
+<section className="cottage-disclaimer">
+  <div className="disclaimer-inner">
+    <span className="disclaimer-label">Cottage Food Disclaimer</span>
+    <p>
+      Prepared in a home kitchen where peanuts and other allergens may be
+      present. Prepared in a kitchen that is not subject to regulation and
+      inspection by a regulatory authority.
+    </p>
+  </div>
+</section>
       </main>
 
       <footer>
