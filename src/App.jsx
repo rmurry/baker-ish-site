@@ -270,8 +270,7 @@ const handleSubmit = async (e) => {
   </div>
 
   <div className="rush-notice">
-    <strong>Rush Order Notice:</strong> Orders with a due date 7 days or less
-    from today are subject to a $5 rush fee.
+    <strong>Rush Order Notice:</strong> Rush Order Notice: Orders requested with less than two weeks notice may incur an additional rush fee based on quantity, complexity, and design. Any additional fee will be communicated before the order is confirmed.
   </div>
 </div>
 
