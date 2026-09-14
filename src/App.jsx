@@ -148,7 +148,7 @@ const handleSubmit = async (e) => {
         </button>
         {menuOpen && (
           <div className="mobile-menu">
-            {['flavors','occasions','about','faq'].map((item) => (
+            {['gallery','occasions','about','faq'].map((item) => (
               <a key={item} href={`#${item}`} onClick={() => setMenuOpen(false)}>{item[0].toUpperCase()+item.slice(1)}</a>
             ))}
             <button onClick={() => { setMenuOpen(false); scrollToOrder(); }}>Order cake pops</button>
