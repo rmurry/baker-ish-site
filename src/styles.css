@@ -258,16 +258,25 @@ footer { max-width:1240px; margin:0 auto; padding:50px 28px 70px; display:grid; 
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  -webkit-overflow-scrolling: touch;
 }
 
 .gallery-item {
+  flex: 0 0 320px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 18px;
-  aspect-ratio: 1 / 1;
   background: #f8d9dc;
+
+  scroll-snap-align: start;
 }
 
 .gallery-item img {
