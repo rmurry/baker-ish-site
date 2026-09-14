@@ -2,6 +2,16 @@ import { useState } from 'react'
 import { ArrowRight, CakeSlice, CalendarDays, ChevronDown, Mail, MapPin, Menu, Sparkles, X } from 'lucide-react'
 import logo from './assets/baker-ish-logo.jpeg'
 
+import gallery1 from './assets/gallery/choc_chip_lemon.jpg'
+
+const galleryImages = [
+  {
+    src: gallery1,
+    alt: 'Customized Chocolate Chip Cookie Dough (left) and Lemon (right).'
+  }
+
+]
+
 const flavors = [
   { name: 'Chocolate', note: 'Rich chocolate cake + smooth coating', accent: 'Chocolate' },
   { name: 'Vanilla', note: 'Classic vanilla with a soft, sweet finish', accent: 'Classic' },
@@ -127,6 +137,7 @@ const handleSubmit = async (e) => {
           <span>Baker-ish</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
+          <a href="#gallery">Gallery</a>
           <a href="#occasions">Occasions</a>
           <a href="#about">About</a>
           <a href="#faq">FAQ</a>
@@ -173,6 +184,30 @@ const handleSubmit = async (e) => {
         <section className="marquee" aria-label="Baker-ish specialties">
           <div>CAKE POPS ✦ CUSTOM COLORS ✦ OMAHA PICKUP ✦ SMALL BATCH ✦ REALLY GOOD CAKE POPS ✦</div>
         </section>
+
+        <section className="gallery section-pad" id="gallery">
+  <div className="section-heading centered">
+    <span className="kicker">Made by Baker-ish</span>
+    <h2>A little look at what we’ve made.</h2>
+    <p>
+      Custom cakesicles made for birthdays, showers, holidays, and everything
+      in between.
+    </p>
+  </div>
+
+  <div className="gallery-grid">
+    {galleryImages.map((image, i) => (
+      <div className="gallery-item" key={i}>
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
         <section className="occasions section-pad" id="occasions">
           <div className="section-heading centered">
             <span className="kicker">Made for moments</span>
