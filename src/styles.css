@@ -205,21 +205,6 @@ footer { max-width:1240px; margin:0 auto; padding:50px 28px 70px; display:grid; 
   margin: 0;
 }
 
-.rush-notice {
-  display: block;
-  margin-top: 8px;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  font-weight: 600;
-  color: #c83c48;
-}
-
-@media (max-width: 700px) {
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-}
-
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -234,4 +219,31 @@ footer { max-width:1240px; margin:0 auto; padding:50px 28px 70px; display:grid; 
 
 .form-field label {
   margin-bottom: 8px;
+}
+
+.rush-notice {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  padding: 10px 14px;
+
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #c83c48;
+
+  background: #f8d9dc;
+  border-radius: 8px;
+}
+
+.rush-notice strong {
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .rush-notice {
+    grid-column: 1;
+  }
 }

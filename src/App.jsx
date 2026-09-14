@@ -239,7 +239,7 @@ const handleSubmit = async (e) => {
     />
   </label>
 
-  <div className="form-row">
+ <div className="form-row">
   <div className="form-field">
     <label htmlFor="event-date">Event date</label>
 
@@ -249,10 +249,6 @@ const handleSubmit = async (e) => {
       type="date"
       required
     />
-
-    <span className="rush-notice">
-      Rush Order Notice: Orders requested with less than two weeks notice may incur an additional rush fee based on quantity, complexity, and design. Any additional fee will be communicated before the order is confirmed.
-    </span>
   </div>
 
   <div className="form-field">
@@ -271,6 +267,11 @@ const handleSubmit = async (e) => {
       <option value="36">36</option>
       <option value="48+">48+</option>
     </select>
+  </div>
+
+  <div className="rush-notice">
+    <strong>Rush Order Notice:</strong> Orders with a due date 7 days or less
+    from today are subject to a $5 rush fee.
   </div>
 </div>
 
