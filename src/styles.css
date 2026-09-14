@@ -204,3 +204,12 @@ footer { max-width:1240px; margin:0 auto; padding:50px 28px 70px; display:grid; 
   width: auto;
   margin: 0;
 }
+
+.rush-notice {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #c83c48;
+  font-weight: 600;
+}

@@ -245,7 +245,13 @@ const handleSubmit = async (e) => {
       <input
         name="event-date"
         type="date"
+        required
       />
+      <span className="rush-notice">
+    Rush Order Notice: Orders with a due date 7 days or less from today
+    are subject to a $5 rush fee.
+  </span>
+
     </label>
 
     <label>
