@@ -4,13 +4,20 @@ import logo from './assets/baker-ish-logo.jpeg'
 
 import gallery1 from './assets/gallery/choc_chip_lemon.jpg'
 import gallery2 from './assets/gallery/orange.jpg'
+import gallery3 from './assets/gallery/football2.jpg'
 
 const galleryImages = [
   {
     src: gallery1,
     alt: 'Customized Chocolate Chip Cookie Dough (left) and Lemon (right).'
+  },
+  {
+    src: gallery2,
+    alt: 'Orange Creamsicle with delicious candied oranges.'
+  },
+  {
+    src: gallery3
   }
-
 ]
 
 const flavors = [
