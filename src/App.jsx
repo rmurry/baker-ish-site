@@ -127,7 +127,6 @@ const handleSubmit = async (e) => {
           <span>Baker-ish</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#flavors">Flavors</a>
           <a href="#occasions">Occasions</a>
           <a href="#about">About</a>
           <a href="#faq">FAQ</a>
