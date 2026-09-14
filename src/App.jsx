@@ -6,7 +6,7 @@ import gallery1 from './assets/gallery/choc_chip_lemon.jpg'
 import gallery2 from './assets/gallery/orange_funfetti.JPG'
 import gallery3 from './assets/gallery/football2.jpg'
 import gallery4 from './assets/gallery/mahjong.jpg'
-import gallery5 from './assets/gallery/banana_nut2.png'
+import gallery5 from './assets/gallery/banana_nut2.PNG'
 
 const galleryImages = [
   {
