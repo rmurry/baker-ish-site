@@ -285,7 +285,7 @@ const handleSubmit = async (e) => {
 
   <fieldset className="flavor-fieldset">
   <legend>
-    Flavors <span className="form-hint">Pick one or two</span>
+    Flavors <span className="form-hint">Pick one flavor per dozen</span>
   </legend>
 
   <div className="flavor-options">
