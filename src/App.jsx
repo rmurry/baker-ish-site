@@ -3,7 +3,7 @@ import { ArrowRight, CakeSlice, CalendarDays, ChevronDown, Mail, MapPin, Menu, S
 import logo from './assets/baker-ish-logo.jpeg'
 
 import gallery1 from './assets/gallery/choc_chip_lemon.jpg'
-import gallery2 from './assets/gallery/orange.JPG'
+import gallery2 from './assets/gallery/orange_funfetti.JPG'
 import gallery3 from './assets/gallery/football2.jpg'
 
 const galleryImages = [
