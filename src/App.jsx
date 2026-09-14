@@ -240,33 +240,40 @@ const handleSubmit = async (e) => {
   </label>
 
   <div className="form-row">
-    <label>
-      Event date
-      <input
-        name="event-date"
-        type="date"
-        required
-      />
-      <span className="rush-notice">
-    Rush Order Notice: Orders with a due date 7 days or less from today
-    are subject to a $5 rush fee.
-  </span>
+  <div className="form-field">
+    <label htmlFor="event-date">Event date</label>
 
-    </label>
+    <input
+      id="event-date"
+      name="event-date"
+      type="date"
+      required
+    />
 
-    <label>
-      Quantity
-      <select name="quantity" defaultValue="">
-        <option value="" disabled>
-          Select
-        </option>
-        <option value="12">12</option>
-        <option value="24">24</option>
-        <option value="36">36</option>
-        <option value="48+">48+</option>
-      </select>
-    </label>
+    <span className="rush-notice">
+      Rush Order Notice: Orders with a due date 7 days or less from today
+      are subject to a $5 rush fee.
+    </span>
   </div>
+
+  <div className="form-field">
+    <label htmlFor="quantity">Quantity</label>
+
+    <select
+      id="quantity"
+      name="quantity"
+      defaultValue=""
+    >
+      <option value="" disabled>
+        Select
+      </option>
+      <option value="12">12</option>
+      <option value="24">24</option>
+      <option value="36">36</option>
+      <option value="48+">48+</option>
+    </select>
+  </div>
+</div>
 
   <label>
     What are you thinking? Give as much detail as you would like - otherwise you can leave the creativity up to me!

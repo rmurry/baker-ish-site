@@ -210,6 +210,28 @@ footer { max-width:1240px; margin:0 auto; padding:50px 28px 70px; display:grid; 
   margin-top: 8px;
   font-size: 0.8rem;
   line-height: 1.4;
-  color: #c83c48;
   font-weight: 600;
+  color: #c83c48;
+}
+
+@media (max-width: 700px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  margin-bottom: 8px;
 }
