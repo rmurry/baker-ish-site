@@ -26,7 +26,7 @@ const occasions = [
 ]
 
 const faqs = [
-  ['How far ahead should I order?', 'For custom orders, 1–2 weeks of notice is ideal. Larger or highly detailed orders may need additional lead time.'],
+  ['How far ahead should I order?', 'For custom orders, 2 weeks of notice is ideal. Larger or highly detailed orders may need additional lead time.'],
   ['Where is pickup?', 'Baker-ish is a home-based cottage food business in the Omaha area. Exact pickup details are shared after your order is confirmed.'],
   ['Do you offer custom colors and themes?', 'Yes. Share your colors, inspiration, event theme, and quantity in the order request form and we’ll work from there.'],
   ['Do you deliver?', 'Pickup is the default. For select larger local orders, delivery may be available by arrangement.'],
