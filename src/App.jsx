@@ -4,6 +4,8 @@ import logo from './assets/baker-ish-logo.jpeg'
 
 import gallery1a from './assets/gallery/pink_new.jpeg'
 import gallery1b from './assets/gallery/green_new.jpeg'
+import gallery1c from './assets/gallery/brown_new.jpeg'
+import gallery1d from './assets/gallery/pumpkin.jpeg'
 import gallery1 from './assets/gallery/choc_chip_lemon.jpg'
 import gallery5 from './assets/gallery/orange_funfetti.JPG'
 import gallery3 from './assets/gallery/football2.jpg'
@@ -16,6 +18,12 @@ const galleryImages = [
   },
   {
     src: gallery1b
+  },
+  {
+    src: gallery1c
+  },
+  {
+    src: gallery1d
   },
   {
     src: gallery1,
