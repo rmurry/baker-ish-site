@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { ArrowRight, CakeSlice, CalendarDays, ChevronDown, Mail, MapPin, Menu, Sparkles, X } from 'lucide-react'
 import logo from './assets/baker-ish-logo.jpeg'
 
+import gallery1a from './assets/gallery/pink_new.jpeg'
+import gallery1b from './assets/gallery/green_new.jpeg'
 import gallery1 from './assets/gallery/choc_chip_lemon.jpg'
 import gallery5 from './assets/gallery/orange_funfetti.JPG'
 import gallery3 from './assets/gallery/football2.jpg'
@@ -9,6 +11,12 @@ import gallery4 from './assets/gallery/mahjong.jpg'
 import gallery2 from './assets/gallery/banana_nut2.jpg'
 
 const galleryImages = [
+  {
+    src: gallery1a
+  },
+  {
+    src: gallery1b
+  },
   {
     src: gallery1,
     alt: 'Customized Chocolate Chip Cookie Dough (left) and Lemon (right).'
