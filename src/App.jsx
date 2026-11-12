@@ -335,7 +335,6 @@ const handleSubmit = async (e) => {
                 <input type="hidden" name="preorder-item" value={preorderDetails.name} />
                 <label>Name<input name="name" type="text" required /></label>
                 <label>Email<input name="email" type="email" required /></label>
-                <label>Phone<input name="phone" type="tel" required /></label>
                 <label>Number of boxes
                   <select name="boxes" value={preorderQuantity} onChange={(e) => setPreorderQuantity(Number(e.target.value))}>
                     {[1, 2, 3, 4, 5].map((qty) => (
