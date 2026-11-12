@@ -12,7 +12,7 @@ import gallery3 from './assets/gallery/football2.jpg'
 import gallery4 from './assets/gallery/mahjong.jpg'
 import gallery2 from './assets/gallery/banana_nut2.jpg'
 
-import gallery01 from './assets/gallery/thanksgiving.jpeg'
+import gallery0a from './assets/gallery/thanksgiving.jpeg'
 import gallery0b from './assets/gallery/icon.jpeg'
 import gallery0c from './assets/gallery/halloween3.jpeg'
 import gallery0d from './assets/gallery/halloween2.jpg'
