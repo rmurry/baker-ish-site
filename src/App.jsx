@@ -44,6 +44,19 @@ const galleryImages = [
   }
 ]
 
+// Change to false when this preorder release is unavailable.
+const preorderOpen = true
+const preorderDetails = {
+  name: 'Baker-ish Preorder Box',
+  price: 18,
+  cakesiclesPerBox: 6,
+  flavors: 'Assorted flavors',
+  pickupDate: 'To be announced',
+}
+
+// Reuse existing gallery photos until you select release-specific images.
+const preorderPhotos = [gallery1a, gallery1b, gallery1c]
+
 const flavors = [
   { name: 'Chocolate', note: 'Rich chocolate cake + smooth coating', accent: 'Chocolate' },
   { name: 'Vanilla', note: 'Classic vanilla with a soft, sweet finish', accent: 'Classic' },
@@ -71,6 +84,31 @@ function App() {
   const scrollToOrder = () => document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })
 
   const [formStatus, setFormStatus] = useState('idle')
+  const [preorderStatus, setPreorderStatus] = useState('idle')
+  const [preorderQuantity, setPreorderQuantity] = useState(1)
+
+  const handlePreorderSubmit = async (e) => {
+    e.preventDefault()
+    if (!preorderOpen || preorderStatus === 'sending') return
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    setPreorderStatus('sending')
+    try {
+      const response = await fetch('https://formspree.io/f/xaeywqwd', {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      })
+      if (!response.ok) throw new Error('Preorder submission failed')
+      setPreorderStatus('success')
+      setPreorderQuantity(1)
+      form.reset()
+    } catch (error) {
+      console.error('Preorder error:', error)
+      setPreorderStatus('error')
+    }
+  }
+
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -170,6 +208,7 @@ const handleSubmit = async (e) => {
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#gallery">Gallery</a>
+          <a href="#preorders">Preorders</a>
           <a href="#occasions">Occasions</a>
           <a href="#about">About</a>
           <a href="#faq">FAQ</a>
@@ -180,7 +219,7 @@ const handleSubmit = async (e) => {
         </button>
         {menuOpen && (
           <div className="mobile-menu">
-            {['gallery','occasions','about','faq'].map((item) => (
+            {['gallery','preorders','occasions','about','faq'].map((item) => (
               <a key={item} href={`#${item}`} onClick={() => setMenuOpen(false)}>{item[0].toUpperCase()+item.slice(1)}</a>
             ))}
             <button onClick={() => { setMenuOpen(false); scrollToOrder(); }}>Order cake pops</button>
@@ -267,6 +306,61 @@ const handleSubmit = async (e) => {
             <p>Baker-ish is an Omaha-area home cake pop business built around one simple idea: dessert should look fun, taste great, and feel personal.</p>
             <p>Every order is made in small batches with attention to the colors, details, and occasion that make it yours.</p>
             <button className="secondary-btn" onClick={scrollToOrder}>Tell us what you’re planning <ArrowRight size={18}/></button>
+          </div>
+        </section>
+
+        <section className="preorders section-pad" id="preorders">
+          <div className="section-heading centered">
+            <span className="kicker">Limited Releases</span>
+            <h2>Something sweet is coming.</h2>
+            <p>Six handcrafted cakesicles for $18. Available during select preorder releases.</p>
+          </div>
+          <div className="preorder-card">
+            <span className={`preorder-status ${preorderOpen ? 'open' : 'closed'}`}>
+              {preorderOpen ? 'Preorders Open' : 'Preorders Closed'}
+            </span>
+            <div className="preorder-photos">
+              {preorderPhotos.map((photo, index) => (
+                <img key={index} src={photo} alt={`Baker-ish preorder cakesicles ${index + 1}`} loading="lazy" />
+              ))}
+            </div>
+            <div className="preorder-price">
+              ${preorderDetails.price}<span> / box of {preorderDetails.cakesiclesPerBox}</span>
+            </div>
+            <p>{preorderDetails.flavors}</p>
+            <p>Pickup: {preorderDetails.pickupDate}</p>
+            {preorderOpen ? (
+              <form className="preorder-form" onSubmit={handlePreorderSubmit}>
+                <input type="hidden" name="order-type" value="PREORDER" />
+                <input type="hidden" name="preorder-item" value={preorderDetails.name} />
+                <label>Name<input name="name" type="text" required /></label>
+                <label>Email<input name="email" type="email" required /></label>
+                <label>Phone<input name="phone" type="tel" required /></label>
+                <label>Number of boxes
+                  <select name="boxes" value={preorderQuantity} onChange={(e) => setPreorderQuantity(Number(e.target.value))}>
+                    {[1, 2, 3, 4, 5].map((qty) => (
+                      <option key={qty} value={qty}>{qty} {qty === 1 ? 'box' : 'boxes'}</option>
+                    ))}
+                  </select>
+                </label>
+                <input type="hidden" name="total-price" value={`$${preorderQuantity * preorderDetails.price}`} />
+                <div className="preorder-total">
+                  <span>Estimated total</span>
+                  <strong>${preorderQuantity * preorderDetails.price}</strong>
+                </div>
+                <button className="form-submit" type="submit" disabled={preorderStatus === 'sending'}>
+                  {preorderStatus === 'sending' ? 'Sending...' : 'Submit Preorder Request'}
+                </button>
+                {preorderStatus === 'success' && (
+                  <p className="form-success" role="status">Your preorder request has been sent! We'll contact you to confirm availability and pickup details.</p>
+                )}
+                {preorderStatus === 'error' && (
+                  <p className="form-error" role="alert">Something went wrong. Please try again.</p>
+                )}
+              </form>
+            ) : (
+              <p className="preorder-closed-message">No preorders available right now. Follow @baker.ish.omaha for our next release!</p>
+            )}
           </div>
         </section>
 

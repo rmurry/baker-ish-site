@@ -302,3 +302,24 @@ footer { max-width:1240px; margin:0 auto; padding:50px 28px 70px; display:grid; 
     grid-template-columns: 1fr;
   }
 }
+
+/* Baker-ish preorder release */
+.preorders { background: #fff4f1; text-align: center; }
+.preorders .section-heading { max-width: 700px; margin: 0 auto 30px; }
+.preorder-card { max-width: 480px; margin: 0 auto; padding: 32px 26px; background: #fff; border-radius: 20px; box-shadow: 0 8px 30px rgba(122,48,56,.08); }
+.preorder-status { display: inline-block; padding: 7px 15px; border-radius: 30px; font-size: .8rem; font-weight: 700; }
+.preorder-status.open { background: #e1f4e6; color: #287843; }
+.preorder-status.closed { background: #f8d9dc; color: #a73d49; }
+.preorder-photos { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; width: 100%; margin: 22px 0; }
+.preorder-photos img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; background: #f8d9dc; }
+.preorder-price { font-size: 2.8rem; font-weight: 800; color: #c83c48; margin: 10px 0 18px; }
+.preorder-price span { font-size: .95rem; font-weight: 400; color: #80545a; }
+.preorder-card > p { line-height: 1.6; }
+.preorder-form { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; text-align: left; }
+.preorder-form label { display: flex; flex-direction: column; gap: 8px; font-size: .9rem; font-weight: 600; }
+.preorder-form input:not([type="hidden"]), .preorder-form select { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid #e4c7ca; border-radius: 10px; background: #fff; font: inherit; }
+.preorder-total { display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #fff4f1; border-radius: 10px; }
+.preorder-total strong { font-size: 1.5rem; color: #c83c48; }
+.preorder-closed-message { margin-top: 24px; color: #a73d49; font-weight: 600; }
+@media (max-width:600px) { .preorder-photos { gap: 6px; } .preorder-photos img { border-radius: 8px; } .preorder-card { padding: 25px 18px; } }
+
