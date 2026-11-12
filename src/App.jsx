@@ -12,7 +12,41 @@ import gallery3 from './assets/gallery/football2.jpg'
 import gallery4 from './assets/gallery/mahjong.jpg'
 import gallery2 from './assets/gallery/banana_nut2.jpg'
 
+import gallery01 from './assets/gallery/thanksgiving.jpeg'
+import gallery0b from './assets/gallery/icon.jpeg'
+import gallery0c from './assets/gallery/halloween3.jpeg'
+import gallery0d from './assets/gallery/halloween2.jpg'
+import gallery0e from './assets/gallery/halloween1.JPG'
+import gallery0f from './assets/gallery/pink2.jpg'
+import gallery0g from './assets/gallery/houses.jpg'
+import gallery0h from './assets/gallery/banana_nut2.jpg'
+
 const galleryImages = [
+
+  {
+    src: gallery0a
+  },
+  {
+    src: gallery0b
+  },
+  {
+    src: gallery0c
+  },
+  {
+    src: gallery0d
+  },
+  {
+    src: gallery0e,
+  },
+  {
+    src: gallery0f,
+  },
+  {
+    src: gallery0g
+  },
+  {
+    src: gallery0h
+  },
   {
     src: gallery1a
   },
