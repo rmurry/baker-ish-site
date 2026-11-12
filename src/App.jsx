@@ -21,6 +21,10 @@ import gallery0f from './assets/gallery/pink2.jpg'
 import gallery0g from './assets/gallery/houses.PNG'
 import gallery0h from './assets/gallery/baptism.jpg'
 
+import galleryz1 from './assets/gallery/brown_butter_vanilla.png'
+import galleryz2 from './assets/gallery/cinnamon_streusel.png'
+import galleryz3 from './assets/gallery/pumpkin.png'
+
 const galleryImages = [
 
   {
@@ -89,7 +93,7 @@ const preorderDetails = {
 }
 
 // Reuse existing gallery photos until you select release-specific images.
-const preorderPhotos = [gallery1a, gallery1b, gallery1c]
+const preorderPhotos = [galleryz1, galleryz2, galleryz3]
 
 const flavors = [
   { name: 'Chocolate', note: 'Rich chocolate cake + smooth coating', accent: 'Chocolate' },
