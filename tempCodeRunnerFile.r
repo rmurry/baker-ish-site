@@ -1,0 +1,1 @@
+list.files('W:/Projects/bakerish/baker-ish-site/src/assets/gallery')

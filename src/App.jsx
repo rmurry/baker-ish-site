@@ -12,14 +12,14 @@ import gallery3 from './assets/gallery/football2.jpg'
 import gallery4 from './assets/gallery/mahjong.jpg'
 import gallery2 from './assets/gallery/banana_nut2.jpg'
 
-import gallery0a from './assets/gallery/thanksgiving.jpeg'
-import gallery0b from './assets/gallery/icon.jpeg'
-import gallery0c from './assets/gallery/halloween3.jpeg'
+import gallery0a from './assets/gallery/thanksgiving.jpg'
+import gallery0b from './assets/gallery/icon.jpg'
+import gallery0c from './assets/gallery/halloween3.jpg'
 import gallery0d from './assets/gallery/halloween2.jpg'
-import gallery0e from './assets/gallery/halloween1.JPG'
+import gallery0e from './assets/gallery/halloween1.jpg'
 import gallery0f from './assets/gallery/pink2.jpg'
-import gallery0g from './assets/gallery/houses.png'
-import gallery0h from './assets/gallery/banana_nut2.jpg'
+import gallery0g from './assets/gallery/houses.PNG'
+import gallery0h from './assets/gallery/baptism.jpg'
 
 const galleryImages = [
 
