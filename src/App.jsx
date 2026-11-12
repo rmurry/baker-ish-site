@@ -83,7 +83,7 @@ const galleryImages = [
 ]
 
 // Change to false when this preorder release is unavailable.
-const preorderOpen = false
+const preorderOpen = true
 const preorderDetails = {
   name: 'Baker-ish Preorder Box',
   price: 18,
