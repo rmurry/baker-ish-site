@@ -86,7 +86,7 @@ const galleryImages = [
 const preorderOpen = false
 const preorderDetails = {
   name: 'Baker-ish Preorder Box',
-  price: 18,
+  price: 20,
   cakesiclesPerBox: 6,
   flavors: 'Assorted flavors',
   pickupDate: 'To be announced',
@@ -351,7 +351,7 @@ const handleSubmit = async (e) => {
           <div className="section-heading centered">
             <span className="kicker">Limited Releases</span>
             <h2>Something sweet is coming.</h2>
-            <p>Six handcrafted cakesicles for $18. Available during select preorder releases.</p>
+            <p>Six handcrafted cakesicles for $20. Available during select preorder releases.</p>
           </div>
           <div className="preorder-card">
             <span className={`preorder-status ${preorderOpen ? 'open' : 'closed'}`}>
