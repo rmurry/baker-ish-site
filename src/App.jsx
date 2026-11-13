@@ -88,7 +88,7 @@ const preorderDetails = {
   name: 'Baker-ish Preorder Box',
   price: 20,
   cakesiclesPerBox: 6,
-  flavors: 'Brown Butter Vanilla, Cinnamon Streusel, and Pumpkin',
+  flavors: 'Two of each of the following flavors: Brown Butter Vanilla, Cinnamon Streusel, and Pumpkin',
   pickupDate: 'Nov 24-25',
 }
 
@@ -382,7 +382,7 @@ const handleSubmit = async (e) => {
                 </label>
                 <input type="hidden" name="total-price" value={`$${preorderQuantity * preorderDetails.price}`} />
                 <div className="preorder-total">
-                  <span>Estimated total</span>
+                  <span>Total</span>
                   <strong>${preorderQuantity * preorderDetails.price}</strong>
                 </div>
                 <button className="form-submit" type="submit" disabled={preorderStatus === 'sending'}>
