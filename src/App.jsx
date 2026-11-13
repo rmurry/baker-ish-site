@@ -88,8 +88,8 @@ const preorderDetails = {
   name: 'Baker-ish Preorder Box',
   price: 20,
   cakesiclesPerBox: 6,
-  flavors: 'Assorted flavors',
-  pickupDate: 'To be announced',
+  flavors: 'Brown Butter Vanilla, Cinnamon Streusel, and Pumpkin',
+  pickupDate: 'Nov 24-25',
 }
 
 // Reuse existing gallery photos until you select release-specific images.
