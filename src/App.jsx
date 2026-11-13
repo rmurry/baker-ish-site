@@ -88,7 +88,7 @@ const preorderDetails = {
   name: 'Baker-ish Preorder Box',
   price: 20,
   cakesiclesPerBox: 6,
-  flavors: 'Two of each of the following flavors: Brown Butter Vanilla, Cinnamon Streusel, and Pumpkin',
+  flavors: 'Two of each of the following: Brown Butter Vanilla, Cinnamon Streusel, and Pumpkin',
   pickupDate: 'Nov 24-25',
 }
 
@@ -113,6 +113,7 @@ const faqs = [
   ['Where is pickup?', 'Baker-ish is a home-based cottage food business in the Omaha area. Exact pickup details are shared after your order is confirmed.'],
   ['Do you offer custom colors and themes?', 'Yes. Share your colors, inspiration, event theme, and quantity in the order request form and we’ll work from there.'],
   ['Do you deliver?', 'Pickup is the default. For select larger local orders, delivery may be available by arrangement.'],
+  ['How do the preorders work?', 'For holidays and special occasions, we will pre-design cakesicles and offer a variety box at a special price. These will be announced on social media, so make sure to follow!'],
 ]
 
 function App() {
